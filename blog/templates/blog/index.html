@@ -1,0 +1,74 @@
+{% load static %}
+{% include 'blog/template-parts/header.html' %}
+    <main class="main-content-container"><!-- main content container start------- -->
+      
+      <div class="main-column-one"><!-- column one starts------------------ -->
+        <h2>Recent Articles</h2>
+         {% if all_posts %}
+         {% for post in all_posts %}
+          <!-- It contains an article -->
+          <article>
+
+              <div class="post-main-container">
+                <div class="article-image-title-summary">
+                    <div class="bloglist-page-article-img">
+                      <a href="{% url 'article' post.slug %}">
+                        {% if post.lead_img %}
+                          <img  src="{{post.lead_img.url}}">
+                        {% else %}
+                        {% endif %}
+                      </a>
+                    </div>
+
+                    <div class="bloglist-content-section">
+                      <div>
+                          <a href="{% url 'article' post.slug %}">
+                              {{post.title|safe}}
+                          </a>
+                      </div>
+                      <div>
+                          <a href="{% url 'article' post.slug %}">
+                            {{post.summary|safe}}
+                          </a>
+                      </div>
+                      <div class="post-tags"><span>tag</span><span>tag</span><span>tag</span></div>
+                    </div>
+                </div>
+                      <!-- THIS FOLLOWING COMMENTED CODE IS NOT TO BE DELETED  -->
+                <div class="post-date-author-update-bloglist">
+                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-user"></i>&nbsp;&nbsp;by wiz</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;10 march 2020</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;updated: 3333</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;88</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="far fa-eye"></i>&nbsp;&nbsp;100 views</a></span>
+                </div>
+              </div>
+          </article>
+          {% endfor %}
+          {% endif %}
+      </div><!-- column one ends-------------------- -->
+      
+
+      
+      <div class="main-column-two"><!-- column two start------------------- -->
+          <!-- the aside content can also be nested within the main content -->
+          <aside>
+            <h2>Popular</h2>
+
+            <ul class="side-bar-popular">
+              <li><a href="#">Oh I do like to be beside the seaside</a></li>
+              <li><a href="#">Oh I do like to be beside the sea</a></li>
+              <li><a href="#">Although in the North of England</a></li>
+              <li><a href="#">It never stops raining</a></li>
+              <li><a href="#">Oh well...</a></li>
+            </ul>
+          </aside>
+      </div><!-- column two ends------------------- -->
+      
+
+    </main><!-- main content container end------- -->
+
+    <!-- And here is our main footer that is used across all the pages of our website -->
+
+{% include 'blog/template-parts/footer.html' %}
+
