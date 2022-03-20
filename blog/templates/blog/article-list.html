@@ -3,9 +3,13 @@
     <main class="main-content-container"><!-- main content container start------- -->
       
       <div class="main-column-one"><!-- column one starts------------------ -->
-        <h2>Recent Articles</h2>
-         {% if all_posts %}
-         {% for post in all_posts %}
+        {% if category != 'None' %}
+        <h2>Category: {{category}}</h2>
+        {% else %}
+        <h2>No Category Found</h2>
+        {% endif %}
+         {% if posts %}
+         {% for post in posts %}
           <!-- It contains an article -->
           <article>
 
@@ -40,12 +44,9 @@
                 </div>
                       <!-- THIS FOLLOWING COMMENTED CODE IS NOT TO BE DELETED  -->
                 <div class="post-date-author-update-bloglist">
-                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-user"></i>&nbsp;&nbsp;by {{post.author}}</a></span>
-                    <span><a href="{% url 'article' post.slug %}"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;{{post.date_created}}</a></span>
-                    {% if post.date_updated %}
-                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;updated: {{post.date_updated}}</a></span>
-                    {% else %}
-                    {% endif %}
+                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-user"></i>&nbsp;&nbsp;by wiz</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;10 march 2020</a></span>
+                    <span><a href="{% url 'article' post.slug %}"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;updated: 3333</a></span>
                     <span><a href="{% url 'article' post.slug %}"><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;88</a></span>
                     <span><a href="{% url 'article' post.slug %}"><i class="far fa-eye"></i>&nbsp;&nbsp;100 views</a></span>
                 </div>

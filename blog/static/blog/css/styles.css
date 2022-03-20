@@ -42,6 +42,8 @@ body{
    flex-wrap: wrap;
    margin-top: 40px;
    justify-content: space-between;
+   margin-left: 10px;
+   margin-left: 10px;
 }
 .main-content-container div{
     /* border: solid; */
@@ -186,6 +188,8 @@ body{
   margin-top: 30px;
   padding: 20px;
   line-height: 1.6rem;
+  background-color: white;
+  overflow:scroll;
 }
 .blogdetails_related_articles>div:hover{
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
@@ -237,7 +241,8 @@ body{
   /*color: #15adc4;*/
 }
 /*1.6---------------------footer------------------------------*/
-footer{
+footer,
+.social-medial-icons{
   /* padding-left: 10px; */
   margin-top: 40px;
   margin-bottom: 20px;
@@ -247,7 +252,8 @@ footer{
   border-top: solid 1px;
   /*border-bottom: solid 1px;*/
 }
-footer >div{
+footer >div,
+.social-medial-icons >div{
   /* margin-left: 10px; */
   cursor: pointer;
 }
