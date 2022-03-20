@@ -34,13 +34,13 @@ DATABASES
 -postgre driver
 pip install psycopg2-binary==2.8.6
 
-CREATE DATABASE wmedb;
-CREATE USER wiz WITH PASSWORD  '1234567wiz';
+CREATE DATABASE xxxx;
+CREATE USER wiz WITH PASSWORD  'xxxxxxx;
 
 ALTER ROLE wiz SET client_encoding TO 'utf8';
 ALTER ROLE wiz SET default_transaction_isolation TO 'read committed';
 ALTER ROLE wiz SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE wmedb TO wiz;
+GRANT ALL PRIVILEGES ON DATABASE xxx TO wiz;
 
 
 . . .
@@ -48,8 +48,8 @@ GRANT ALL PRIVILEGES ON DATABASE wmedb TO wiz;
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wmecreativesdb',
-        'USER': 'wiz',
+        'NAME': 'xxxxxxxx',
+        'USER': 'xx',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '',
@@ -67,7 +67,7 @@ POSTGRESQL COMMANDS
 -accessing postgresql prompt
 sudo -u postgres psql
 sudo -u wiz psql
-sudo -u wiz psql wmecreativesdb
+sudo -u wiz psql xxxxuser
 
 -list databases
 \l
@@ -82,16 +82,15 @@ sudo -u wiz psql wmecreativesdb
 -exit
 \q
 -Creating a New Database
-createdb wmecreativesdb
-OR
-CREATE DATABASE wmecreativesdb;
-sudo -u postgres psql -c 'create database wmecreativesdb;'
-sudo -u postgres psql -c 'grant all privileges on database wmecreativesdb to wiz;'
+createdb xxx
+CREATE DATABASE xxxx;
+sudo -u postgres psql -c 'create database xxx;'
+sudo -u postgres psql -c 'grant all privileges on database xxxx to wiz;'
 
 -delete database 
-dropdb wmecreativesdb
+dropdb xxxx
 or
-DROP DATABASE wmecreativesdb;
+DROP DATABASE xxxx;
 
 -set password for user
 ALTER USER wiz WITH PASSWORD '1234567wiz';
@@ -101,7 +100,7 @@ LINUX
 
 GUNICORN
 -testing hgunicorn on django 
-gunicorn --bind 0.0.0.0:8000 wmecreatives_freedata_django.wsgi
+gunicorn --bind 0.0.0.0:8000 project.wsgi
 
 -see status of gunicorn
 sudo systemctl status gunicorn
@@ -123,13 +122,13 @@ After=network.target
 [Service]
 User=wisdom
 Group=www-data
-WorkingDirectory=/home/dev/wmecreatives
-ExecStart=/home/dev/wmecreatives-env/bin/gunicorn \
+WorkingDirectory=/home/dev/xxxx
+ExecStart=/home/dev/xxxx-env/bin/gunicorn \
           --access-logfile - \
           --workers 5 \
           --timeout 600 \
           --bind unix:/run/gunicorn.sock \
-          wmecreatives_freedata_django.wsgi:application
+          xxxx_freedata_django.wsgi:application
 
 
 [Install]
@@ -154,7 +153,7 @@ NGNINX CONFIG FILE
 
 -second config file 
 found on 
-sudo nano /etc/nginx/sites-available/wmecreatives
+sudo nano /etc/nginx/sites-available/xxxx
 
 server {
     listen 80;
@@ -162,11 +161,11 @@ server {
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/dev/wmecreatives;
+        root /home/dev/xxxx;
     }
     
     location /media/ {
-            root /home/dev/wmecreatives;
+            root /home/dev/xxxx;
         }
 
     location / {
@@ -221,8 +220,8 @@ sudo nano  /etc/supervisor/conf.d/celery.conf
 -Infor in celery.conf LOCAL ENVIRONMENT
 
 [program:celery]
-directory = /home/wiz/Desktop/wmecreatives/wmecreatives/
-command = /home/wiz/Desktop/wmecreatives/wmecreatives-env/bin/celery -A wmecreatives_freedata_django worker --
+directory = /home/wiz/Desktop/xxxx/xxxx/
+command = /home/wiz/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django worker --
 loglevel=INFO
 user=root
 autostart=true
@@ -233,8 +232,8 @@ stdout_logfile=/var/log/long.out.log
 -Infor in celery.conf PRODUCTION ENVIRONMENT
 
 [program:celery]
-directory = /home/dev/wmecreatives/
-command = /home/dev/wmecreatives-env/bin/celery -A wmecreatives_freedata_django worker -B -l info
+directory = /home/dev/xxxx/
+command = /home/dev/xxxx-env/bin/celery -A xxxx_freedata_django worker -B -l info
 loglevel=INFO
 user=root
 autostart=true
@@ -246,8 +245,8 @@ stdout_logfile=/var/log/long.out.log
 sudo nano  /etc/supervisor/conf.d/celerybeat.conf
 
 [program:celerybeat]
-command=/home/wiz/Desktop/wmecreatives/wmecreatives-env/bin/celery -A wmecreatives_freedata_django beat -l info
-directory=/home/wiz/Desktop/wmecreatives/wmecreatives/
+command=/home/wiz/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django beat -l info
+directory=/home/wiz/Desktop/xxxx/xxxx/
 user=root
 numprocs=1
 stdout_logfile=/var/log/stout_beat.log
@@ -259,8 +258,8 @@ autorestart=true
 sudo nano  /etc/supervisor/conf.d/celerybeat.conf
 
 [program:celerybeat]
-command=/home/dev/wmecreatives-env/bin/celery -A wmecreatives_freedata_django beat -l info
-directory=/home/dev/wmecreatives/
+command=/home/dev/xxxx-env/bin/celery -A xxxx_freedata_django beat -l info
+directory=/home/dev/xxxx/
 user=root
 numprocs=1
 stdout_logfile=/var/log/stout_beat.log
