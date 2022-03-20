@@ -5,7 +5,7 @@ from . models import Articles, Categories
 def index(request):
     all_posts = Articles.objects.all()
     categories = Categories.objects.all()
-    return render(request, 'blog/index.html', {"all_posts":all_posts,
+    return render(request, 'blog/index.html', {"posts":all_posts,
                                                "categories":categories})
 
 def article(request, slug):
