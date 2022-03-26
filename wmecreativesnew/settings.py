@@ -34,7 +34,7 @@ SECRET_KEY = config['SECRET_KEY']
 if config["PRODUCTION"] == "No":
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
 ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com', '127.0.0.1']
 
