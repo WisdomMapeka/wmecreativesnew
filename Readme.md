@@ -328,3 +328,5 @@ ADDITIONAL LINUX COMMANDS
 -copy a .env fle to /wmecreativesnew/wmecreativesnew folder on the server
 scp .env wiz@{SERVER IP}:~/wmecreativesnew/wmecreativesnew
 
+-config file is in /etc/
+

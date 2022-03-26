@@ -110,10 +110,21 @@ WSGI_APPLICATION = 'wmecreativesnew.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': config['ENGINE'],
+        'NAME': config['DATABASE_NAME'],
+        'USER': config['DATABASE_USER'],
+        'PASSWORD': config['DATABASE_PASS'],
+        'HOST': config['HOST'],
+        # 'PORT': '',
     }
 }
 
