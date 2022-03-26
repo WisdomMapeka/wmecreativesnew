@@ -11,9 +11,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import environ
-env = environ.Env()
-environ.Env.read_env()
+import json
+with open('/etc/wmecreativesconfig.json') as config_file:
+    config = json.load(config_file)
+
+# import environ
+# env = environ.Env()
+# environ.Env.read_env()
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,12 +28,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = config['DEBUG']
 
-ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com']
+ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com', '127.0.0.1']
 
 
 # Application definition
