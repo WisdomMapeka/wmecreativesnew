@@ -120,7 +120,7 @@ Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=wisdom
+User=name
 Group=www-data
 WorkingDirectory=/home/dev/xxxx
 ExecStart=/home/dev/xxxx-env/bin/gunicorn \
@@ -157,7 +157,7 @@ sudo nano /etc/nginx/sites-available/xxxx
 
 server {
     listen 80;
-    server_name 35.197.214.236;
+    server_name 'IP GOES HERE';
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
@@ -220,8 +220,8 @@ sudo nano  /etc/supervisor/conf.d/celery.conf
 -Infor in celery.conf LOCAL ENVIRONMENT
 
 [program:celery]
-directory = /home/wiz/Desktop/xxxx/xxxx/
-command = /home/wiz/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django worker --
+directory = /home/USER/Desktop/xxxx/xxxx/
+command = /home/USER/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django worker --
 loglevel=INFO
 user=root
 autostart=true
@@ -245,8 +245,8 @@ stdout_logfile=/var/log/long.out.log
 sudo nano  /etc/supervisor/conf.d/celerybeat.conf
 
 [program:celerybeat]
-command=/home/wiz/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django beat -l info
-directory=/home/wiz/Desktop/xxxx/xxxx/
+command=/home/USER/Desktop/xxxx/xxxx-env/bin/celery -A xxxx_freedata_django beat -l info
+directory=/home/USER/Desktop/xxxx/xxxx/
 user=root
 numprocs=1
 stdout_logfile=/var/log/stout_beat.log
@@ -323,3 +323,8 @@ sudo service redis-server start
 sudo service redis-server  {start|stop|restart|force-reload|status}
 
 ----------------------------------------------------------
+ADDITIONAL LINUX COMMANDS
+
+-copy a .env fle to /wmecreativesnew/wmecreativesnew folder on the server
+scp .env wiz@{SERVER IP}:~/wmecreativesnew/wmecreativesnew
+
