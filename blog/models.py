@@ -50,4 +50,33 @@ class Images(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Comments(models.Model):
+    date_created = models.DateField(auto_now_add=True, null=True, blank=True)
+    name  = models.CharField(max_length=300, null=True, blank=True)
+    comment = models.TextField(null=True, blank=True)
+    likes = models.IntegerField(default=0, null=True, blank=True)
+    dislikes = models.IntegerField(default=0, null=True, blank=True)
+    blog = models.ForeignKey(Articles, on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Messages(models.Model):
+    name = models.CharField(max_length=300, null=True, blank=True)
+    email = models.CharField(max_length=300, null=True, blank=True)
+    phone = models.CharField(max_length=300, null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        if self.name and self.email and self.phone:
+            return "Name: {}   email: {}   phone: {}".format(self.name, self.email, self.phone)
+        elif self.name and self.email:
+            return "Name: {}   email: {}".format(self.name, self.email)
+        elif self.name:
+            return self.name
+        else:
+            return "NO NAME"
     

@@ -240,6 +240,51 @@ body{
   color: white;
   /*color: #15adc4;*/
 }
+/* -----------------------COMMENT SECTIONS STYLES------------- */
+.comment-statement-devide-line{
+  border: solid 1px  rgb(100,100,100);
+}
+.comment-form input[id='name']{
+    height: 40px;
+}
+.comment-section-container,
+.comment-display-section-container{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.comment-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/*.comment-form ,*/
+.comment-form  input[type='text'],
+.comment-form  textarea{
+   width: 100%;
+   border: none;
+   /*box-shadow: 1px 0px 1px 1px rgba(180, 180, 180, 1.0);*/
+   /*box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 9px 0px;*/
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.comment-form  textarea{
+  height: 200px;
+}
+.comment-box{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /*background-color: rgb(245, 245, 245);*/
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  padding: 30px;
+  color: rgb(55, 55, 55);
+}
+.comment-owner-meta-details{
+  font-size: 13px;
+  padding-top: 20px;
+}
+
+.comment-owner-meta-details div:nth-child(1){
+  /*font-style: italic;*/
+  color: rgb(55, 55, 55) !important;
+}
 /*1.6---------------------footer------------------------------*/
 footer,
 .social-medial-icons{
