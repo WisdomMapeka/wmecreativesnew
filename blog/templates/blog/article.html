@@ -4,7 +4,7 @@
       <div class="main-column-one"><!-- column one starts------------------ -->
         {% if post %}
         <div class="blogdetails-topic">
-            <h1 style="color: #e2dcdc;">
+            <h1>
               {{post.title}}
             </h1>
             <!-- 	{% if blog.author_image %}
@@ -22,6 +22,7 @@
                 <div><i class="far fa-eye"></i>&nbsp;&nbsp;{{blog.num_views}}</div>	 -->
             </div>
         </div>
+        <!-- <div class="section-devide-line"></div> -->
           
         <div class="blogdetails-content"><!-- content of the article starts -->
             {{post.content|safe}}

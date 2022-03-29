@@ -4,6 +4,7 @@ a{
 }
 body{
   background-color: #f7f7f7;
+  color: #333333;
 }
 .logo{
   font-weight: bold;
@@ -152,9 +153,15 @@ body{
 
   /* 1.5 ---------------BLOGDETAILS--------------------------- */
 .blogdetails-topic{
-  background-color: #23241F;
-  color: #8c8c8c;
+  /* background-color: #23241F;
+  color: #8c8c8c; */
+  /* background-color: white; */
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
   padding: 40px;
+  color: #15adc4 !important;
+  border: solid 1px rgba(230,230,230, 0.7);
+  background-color: white;
+  border-bottom: solid 3px #15adc4;
 }
 .auther-pic{
   background-color: white;
@@ -241,7 +248,7 @@ body{
   /*color: #15adc4;*/
 }
 /* -----------------------COMMENT SECTIONS STYLES------------- */
-.comment-statement-devide-line{
+.section-devide-line{
   border: solid 1px  rgb(100,100,100);
 }
 .comment-form input[id='name']{
