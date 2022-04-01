@@ -1,5 +1,5 @@
 from django import views
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -10,5 +10,8 @@ urlpatterns = [
     path('like_dislike_comment/<str:val>/<int:comment_id>/', views.like_dislike_comment, name='like_dislike_comment'),
     # contacts
     path('sendmessage/', views.sendmessage, name='sendmessage'),
-    path('contacts/', views.contacts, name='contacts',)
+    path('contacts/', views.contacts, name='contacts'),
+    # photo api
+    path('photos_api/',  views.images_list),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

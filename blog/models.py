@@ -79,4 +79,16 @@ class Messages(models.Model):
             return self.name
         else:
             return "NO NAME"
+
+# api image model
+class Photos_collections(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True, default="api image")
+    uploded = models.DateTimeField(auto_now_add=True)
+    description = models.TextField(null=True, blank=True)
+    photographer = models.CharField(max_length=200, null=True, blank=True)
+    photo = models.ImageField(upload_to = "api_photos", null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
     
