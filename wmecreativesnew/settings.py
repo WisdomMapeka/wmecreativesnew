@@ -97,6 +97,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.google_analytics_processor',
             ],
         },
     },
@@ -145,7 +146,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
