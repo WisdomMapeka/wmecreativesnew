@@ -14,14 +14,14 @@ from rest_framework.parsers import JSONParser
 
 # Create your views here.
 def index(request):
-    all_posts = Articles.objects.all()
+    all_posts = Articles.objects.filter(article_status='publish')
     categories = Categories.objects.all()
     return render(request, 'blog/index.html', {"posts":all_posts,
                                                "categories":categories})
 
 def article(request, slug):
     categories = Categories.objects.all()
-    post = Articles.objects.get(slug = slug)
+    post = Articles.objects.get(slug = slug, article_status='publish')
     return render(request, 'blog/article.html', {"post":post,
                                                  "categories":categories})
 

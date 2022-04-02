@@ -3,6 +3,11 @@ from statistics import mode
 from django.db import models
 from tinymce.models import HTMLField 
 
+draft_publish = (
+    ('publish','publish'),
+    ('draft','draft'),
+)
+
 class AnalyticsCode(models.Model):
     name = models.CharField(default="google code", max_length=200, null=True, blank=True)
     code_text = models.TextField(null=True, blank=True)
@@ -25,6 +30,7 @@ class Categories(models.Model):
 
 class Articles(models.Model):
     title = models.CharField(max_length=1000, null=True, blank=True)
+    article_status = models.CharField(max_length=100, null=True, blank=True, choices=draft_publish)
     slug = models.CharField(max_length=1000, null=True, blank=True, unique=True)
     category = models.ManyToManyField(Categories, blank=True)
     lead_img = models.ImageField(upload_to='media_files/blog', null=True, blank=True)
