@@ -33,7 +33,7 @@ def article_list(request, category):
     except AttributeError:
         category_id = 0
     print(category_id)
-    posts = Articles.objects.filter(category = category_id)
+    posts = Articles.objects.filter(category = category_id, article_status='publish')
     print(posts)
     return render(request, 'blog/article-list.html', {"posts":posts, 
                                                       "category":category,
