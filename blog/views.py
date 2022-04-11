@@ -14,6 +14,16 @@ from rest_framework.parsers import JSONParser
 
 # Create your views here.
 def index(request):
+    # for i in dir(request):
+    #     print(i)
+    print(request.scheme)
+    print(request.path_info)
+    print(request.path)
+    print(request.get_raw_uri)
+    print(request.get_host, "GET HOST")
+    print(request.get_full_path_info)
+    print(request.get_full_path)
+    print(request.META['HTTP_HOST'])
     all_posts = Articles.objects.filter(article_status='publish')
     categories = Categories.objects.all()
     return render(request, 'blog/index.html', {"posts":all_posts,
