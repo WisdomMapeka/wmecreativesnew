@@ -8,7 +8,7 @@
         <div class="bloglist-page-article-img">
             <a href="{% url 'article' post.slug %}">
             {% if post.lead_img %}
-                <img  src="{{post.lead_img.url}}">
+                <img alt="{{post.lead_img_alt}}"  src="{{post.lead_img.url}}">
             {% else %}
             {% endif %}
             </a>

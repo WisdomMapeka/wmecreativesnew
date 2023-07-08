@@ -17,6 +17,10 @@
             <div class="post-meta-data"> 
                 <div><i class="fas fa-user"></i>&nbsp;&nbsp;by: {{post.author}}</div>
                 <div><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;{{post.date_created}}</div>
+                {% if post.date_updated %}
+                <span><a href="{% url 'article' post.slug %}"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;updated: {{post.date_updated}}</a></span>
+                {% else %}
+                {% endif %}
                 <!-- TO BE UNCOMMENTED WHEN THE VIEWS DN NUM OF COMMNETS IS FIXED -->
                 <!-- <div><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;200</div>
                 <div><i class="far fa-eye"></i>&nbsp;&nbsp;{{blog.num_views}}</div>	 -->

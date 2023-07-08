@@ -68,7 +68,10 @@ sudo bash
 su
 
 
-POSTGRESQL COMMANDS
+POSTGRESQL COMMANDS\
+-Creating a New Role
+sudo -u postgres createuser --interactive
+
 -accessing postgresql prompt
 sudo -u postgres psql
 sudo -u wiz psql
@@ -99,6 +102,9 @@ DROP DATABASE xxxx;
 
 -set password for user
 ALTER USER wiz WITH PASSWORD '1234567wiz';
+
+SERVER
+sudo service postgresql start|stop|restart
 
 LINUX
 
