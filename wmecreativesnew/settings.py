@@ -117,16 +117,15 @@ WSGI_APPLICATION = 'wmecreativesnew.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': config['ENGINE'],
-        'NAME': config['DATABASE_NAME'],
-        'USER': config['DATABASE_USER'],
-        'PASSWORD': config['DATABASE_PASS'],
-        'HOST': config['HOST'],
-        # 'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config['ENGINE'],
+#         'NAME': config['DATABASE_NAME'],
+#         'USER': config['DATABASE_USER'],
+#         'PASSWORD': config['DATABASE_PASS'],
+#         'HOST': config['HOST'],
+#     }
+# }
 
 
 # Password validation
