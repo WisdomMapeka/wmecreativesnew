@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import json
-with open('../../wmecreativesconfig.json') as config_file:
+with open('/home/wisdommapeka/wmecreativesconfig.json') as config_file:
     config = json.load(config_file)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
