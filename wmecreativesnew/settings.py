@@ -31,7 +31,7 @@ if config["PRODUCTION"] == "No":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com', '127.0.0.1']
+ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com', '127.0.0.1', 'wisdommapeka.pythonanywhere.com']
 
 
 # Application definition
