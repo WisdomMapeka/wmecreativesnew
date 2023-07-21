@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import json
-with open('/home/wisdommapeka/wmecreativesconfig.json') as config_file:
+with open('/etc/wmecreativesconfig.json') as config_file:
     config = json.load(config_file)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -31,7 +31,7 @@ if config["PRODUCTION"] == "No":
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['45.79.56.195', 'wmecreatives', 'wmecreatives.com', '127.0.0.1', 'wisdommapeka.pythonanywhere.com']
+ALLOWED_HOSTS = ['45.79.109.107', 'wmecreatives', 'wmecreatives.com', '127.0.0.1', 'wisdommapeka.pythonanywhere.com']
 
 
 # Application definition
