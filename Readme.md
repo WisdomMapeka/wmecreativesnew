@@ -75,7 +75,7 @@ sudo -u postgres createuser --interactive
 -accessing postgresql prompt
 sudo -u postgres psql
 sudo -u wiz psql
-sudo -u wiz psql xxxxuser
+sudo -u wiz psql xxxxdatabasename
 
 -list databases
 \l
